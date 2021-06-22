@@ -52,3 +52,6 @@ params:
       - { db: tms, source: dbo.Locations, destination: Locations }
       - { db: tms, source: dbo.ObjLocations, destination: ObjLocations }
       - { db: tms, source: dbo.ObjComponents, destination: ObjComponents }
+      - { db: tms, source: dbo.MediaXrefs, destination: MediaXrefs }
+      - { db: tms, source: dbo.MediaRenditions, destination: MediaRenditions }
+      - { db: tms, source: dbo.MediaFiles, destination: MediaFiles }

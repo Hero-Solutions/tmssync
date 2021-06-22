@@ -347,6 +347,66 @@ schema:
         DisplayBioID:
           name: DisplayBioID
           type: text
+    MediaFiles:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        FileID:
+          name: FileID
+          type: text
+        RenditionID:
+          name: RenditionID
+          type: text
+        PathID:
+          name: PathID
+          type: text
+        FileName:
+          name: FileName
+          type: text
+    MediaRenditions:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        RenditionID:
+          name: RenditionID
+          type: text
+        MediaMasterID:
+          name: MediaMasterID
+          type: text
+    MediaXrefs:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        MediaXrefID:
+          name: MediaXrefID
+          type: text
+        MediaMasterID:
+          name: MediaMasterID
+          type: text
+        ID:
+          name: ID
+          type: text
+        TableID:
+          name: TableID
+          type: text
     Roles:
       primaryKey: tmsid
       columns:
