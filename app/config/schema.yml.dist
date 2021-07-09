@@ -102,6 +102,25 @@ schema:
         UseAsField:
           name: UseAsField
           type: text
+    ClassificationNotations:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        ClassificationNotationID:
+          name: ClassificationNotationID
+          type: text
+        CN:
+          name: CN
+          type: text
+        TermMasterID:
+          name: TermMasterID
+          type: text
     Constituents:
       primaryKey: tmsid
       columns:
@@ -406,6 +425,9 @@ schema:
           type: text
         TableID:
           name: TableID
+          type: text
+        DisplayOrder:
+          name: DisplayOrder
           type: text
     Roles:
       primaryKey: tmsid

@@ -55,3 +55,4 @@ params:
       - { db: tms, source: dbo.MediaXrefs, destination: MediaXrefs }
       - { db: tms, source: dbo.MediaRenditions, destination: MediaRenditions }
       - { db: tms, source: dbo.MediaFiles, destination: MediaFiles }
+      - { db: tms, source: dbo.ClassificationNotations, destination: ClassificationNotations }
