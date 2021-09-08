@@ -49,3 +49,10 @@ params:
       - { db: tms, source: dbo.Associations, destination: Associations }
       - { db: tms, source: dbo.Relationships, destination: Relationships }
       - { db: tms, source: dbo.AltNums, destination: AltNums }
+      - { db: tms, source: dbo.Locations, destination: Locations }
+      - { db: tms, source: dbo.ObjLocations, destination: ObjLocations }
+      - { db: tms, source: dbo.ObjComponents, destination: ObjComponents }
+      - { db: tms, source: dbo.MediaXrefs, destination: MediaXrefs }
+      - { db: tms, source: dbo.MediaRenditions, destination: MediaRenditions }
+      - { db: tms, source: dbo.MediaFiles, destination: MediaFiles }
+      - { db: tms, source: dbo.ClassificationNotations, destination: ClassificationNotations }

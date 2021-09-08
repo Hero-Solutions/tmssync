@@ -102,6 +102,25 @@ schema:
         UseAsField:
           name: UseAsField
           type: text
+    ClassificationNotations:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        ClassificationNotationID:
+          name: ClassificationNotationID
+          type: text
+        CN:
+          name: CN
+          type: text
+        TermMasterID:
+          name: TermMasterID
+          type: text
     Constituents:
       primaryKey: tmsid
       columns:
@@ -346,6 +365,69 @@ schema:
           type: text
         DisplayBioID:
           name: DisplayBioID
+          type: text
+    MediaFiles:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        FileID:
+          name: FileID
+          type: text
+        RenditionID:
+          name: RenditionID
+          type: text
+        PathID:
+          name: PathID
+          type: text
+        FileName:
+          name: FileName
+          type: text
+    MediaRenditions:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        RenditionID:
+          name: RenditionID
+          type: text
+        MediaMasterID:
+          name: MediaMasterID
+          type: text
+    MediaXrefs:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        MediaXrefID:
+          name: MediaXrefID
+          type: text
+        MediaMasterID:
+          name: MediaMasterID
+          type: text
+        ID:
+          name: ID
+          type: text
+        TableID:
+          name: TableID
+          type: text
+        DisplayOrder:
+          name: DisplayOrder
           type: text
     Roles:
       primaryKey: tmsid
@@ -1777,6 +1859,60 @@ schema:
           type: text
         ID:
           name: ID
+          type: text
+    Locations:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        LocationID:
+          name: LocationID
+          type: text
+        Room:
+          name: Room
+          type: text
+        Site:
+          name: Site
+          type: text
+    ObjLocations:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        ObjLocationID:
+          name: ObjLocationID
+          type: text
+        LocationID:
+          name: LocationID
+          type: text
+    ObjComponents:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        ComponentID:
+          name: ComponentID
+          type: text
+        CurrentObjLocID:
+          name: CurrentObjLocID
+          type: text
+        ObjectID:
+          name: ObjectID
           type: text
     CITvgsrpObjTombstoneD_RO:
       primaryKey: tmsid
