@@ -121,6 +121,22 @@ schema:
         TermMasterID:
           name: TermMasterID
           type: text
+    StatusFlags:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        ObjectID:
+          name: ObjectID
+          type: text
+        FlagID:
+          name: FlagID
+          type: text
     Constituents:
       primaryKey: tmsid
       columns:
