@@ -1,0 +1,52 @@
+params:
+    mysql:
+      host: localhost
+      driver: pdo_mysql
+      dbname: tms
+      user: root
+      password: root
+      charset: UTF8
+    tms:
+      host: 10.101.0.3
+      driver: dblib
+#      driverClass: Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver
+      dbname: tms
+      user: catmandu
+      password: Abc123-a2
+    mapping:
+#      - { db: tms, source: dbo.Objects, destination: Objects }
+#      - { db: tms, source: dbo.ObjContext, destination: ObjContext }
+#      - { db: tms, source: dbo.ObjectNames, destination: ObjectNames }
+#      - { db: tms, source: dbo.ClassificationXRefs, destination: ClassificationXRefs }
+#      - { db: tms, source: dbo.Classifications, destination: Classifications }
+#      - { db: tms, source: dbo.DimItemElemXrefs, destination: DimItemElemXrefs }
+#      - { db: tms, source: dbo.Dimensions, destination: Dimensions }
+#      - { db: tms, source: dbo.DimensionElements, destination: DimensionElements }
+#      - { db: tms, source: dbo.DimElemTypeXrefs, destination: DimElemTypeXrefs }
+#      - { db: tms, source: dbo.DimensionTypes, destination: DimensionTypes }
+#      - { db: tms, source: dbo.DimUnitTypes, destination: DimUnitTypes }
+#      - { db: tms, source: dbo.DimensionUnits, destination: DimensionUnits }
+#      - { db: tms, source: dbo.DimensionMethods, destination: DimensionMethods }
+#      - { db: tms, source: dbo.DDLanguages, destination: DDLanguages }
+#      - { db: tms, source: dbo.Constituents, destination: Constituents }
+#      - { db: tms, source: dbo.ConXrefs, destination: ConXrefs }
+#      - { db: tms, source: dbo.ConXrefDetails, destination: ConXrefDetails }
+#      - { db: tms, source: dbo.Roles, destination: Roles }
+#      - { db: tms, source: dbo.RoleTypes, destination: RoleTypes }
+#      - { db: tms, source: dbo.TextTypes, destination: TextTypes }
+      - { db: tms, source: dbo.TextEntries, destination: TextEntries }
+      - { db: tms, source: dbo.TextStatuses, destination: TextStatuses }
+      - { db: tms, source: dbo.ThesXrefs, destination: ThesXrefs }
+      - { db: tms, source: dbo.ThesXrefTypes, destination: ThesXrefTypes }
+      - { db: tms, source: dbo.ThesaurusBases, destination: ThesaurusBases }
+      - { db: tms, source: dbo.TermClasses, destination: TermClasses }
+      - { db: tms, source: dbo.TermMaster, destination: TermMaster }
+      - { db: tms, source: dbo.Terms, destination: Terms }
+      - { db: tms, source: dbo.UserFieldXrefs, destination: UserFieldXrefs }
+      - { db: tms, source: dbo.ObjTitles, destination: ObjTitles }
+      - { db: tms, source: dbo.TitleTypes, destination: TitleTypes }
+      - { db: tms, source: dbo.CITvgsrpObjTombstoneD_RO, destination: CITvgsrpObjTombstoneD_RO }
+      - { db: tms, source: dbo.Departments, destination: Departments }
+      - { db: tms, source: dbo.Associations, destination: Associations }
+      - { db: tms, source: dbo.Relationships, destination: Relationships }
+      - { db: tms, source: dbo.AltNums, destination: AltNums }
