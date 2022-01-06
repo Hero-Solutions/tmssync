@@ -57,3 +57,5 @@ params:
       - { db: tms, source: dbo.MediaFiles, destination: MediaFiles }
       - { db: tms, source: dbo.ClassificationNotations, destination: ClassificationNotations }
       - { db: tms, source: dbo.StatusFlags, destination: StatusFlags }
+      - { db: tms, source: dbo.AuthorityTranslations, destination: AuthorityTranslations }
+      - { db: tms, source: dbo.TermMasterThes, destination: TermMasterThes }

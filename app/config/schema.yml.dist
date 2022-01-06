@@ -137,6 +137,34 @@ schema:
         FlagID:
           name: FlagID
           type: text
+    AuthorityTranslations:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        AuthTranslationID:
+          name: AuthTranslationID
+          type: text
+        ID:
+          name: ID
+          type: text
+        TableID:
+          name: TableID
+          type: text
+        Translation1:
+          name: Translation1
+          type: text
+        Translation2:
+          name: Translation2
+          type: text
+        Translation3:
+          name: Translation3
+          type: text
     Constituents:
       primaryKey: tmsid
       columns:
@@ -1929,6 +1957,25 @@ schema:
           type: text
         ObjectID:
           name: ObjectID
+          type: text
+    TermMasterThes:
+      primarykey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        TermMasterID:
+          name: TermMasterID
+          type: text
+        TermSource:
+          name: TermSource
+          type: text
+        SourceTermID:
+          name: SourceTermID
           type: text
     CITvgsrpObjTombstoneD_RO:
       primaryKey: tmsid
