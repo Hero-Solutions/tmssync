@@ -1990,6 +1990,9 @@ schema:
         ExhibitionID:
           name: ExhibitionID
           type: text
+        ExhibitionTitleID:
+          name: ExhibitionTitleID
+          type: text
         ProjectNumber:
           name: ProjectNumber
           type: text
