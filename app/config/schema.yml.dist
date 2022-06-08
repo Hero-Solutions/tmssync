@@ -1977,6 +1977,54 @@ schema:
         SourceTermID:
           name: SourceTermID
           type: text
+    Exhibitions:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        ExhibitionID:
+          name: ExhibitionID
+          type: text
+    ExhibitionTitles:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        ExhibitionID:
+          name: ExhibitionID
+          type: text
+        ExhibitionTitleID:
+          name: ExhibitionTitleID
+          type: text
+        Title:
+          name: Title
+          type: text
+    ExhObjXrefs:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        ExhibitionID:
+          name: ExhibitionID
+          type: text
+        ObjectID:
+          name: ObjectID
+          type: text
     CITvgsrpObjTombstoneD_RO:
       primaryKey: tmsid
       columns:

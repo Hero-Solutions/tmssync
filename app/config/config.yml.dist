@@ -59,3 +59,6 @@ params:
       - { db: tms, source: dbo.StatusFlags, destination: StatusFlags }
       - { db: tms, source: dbo.AuthorityTranslations, destination: AuthorityTranslations }
       - { db: tms, source: dbo.TermMasterThes, destination: TermMasterThes }
+      - { db: tms, source: dbo.Exhibitions, destination: Exhibitions }
+      - { db: tms, source: dbo.ExhibitionTitles, destination: ExhibitionTitles }
+      - { db: tms, source: dbo.ExhObjXrefs, destination: ExhObjXrefs }
