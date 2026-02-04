@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(
-    name: 'tmssync:install',
+    name: 'tms:install',
     description: 'Install the MySQL database schema'
 )]
 final class InstallSchemaCommand extends Command

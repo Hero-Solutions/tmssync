@@ -11,7 +11,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(
-    name: 'tmssync:export',
+    name: 'tms:export',
     description: 'Export data from TMS to MySQL'
 )]
 final class ExportDataCommand extends Command
@@ -47,7 +47,7 @@ final class ExportDataCommand extends Command
             ? array_map('trim', explode(',', $exclusive))
             : [];
 
-        if ((bool) $input->getOption('fetch')) {
+        if ($input->getOption('fetch')) {
             $this->destination->truncate($exclusiveTables);
             $this->source->fetch($exclusiveTables);
         }
