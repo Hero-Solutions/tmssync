@@ -16,6 +16,7 @@ use Flemishartcollection\TMSSync\Database\DatabaseInterface;
 use Flemishartcollection\TMSSync\Configuration\Configuration as Parameters;
 use Flemishartcollection\TMSSync\Filesystem\CSVWriter;
 use Monolog\Logger;
+use PDO;
 
 /**
  * Source class

@@ -28,6 +28,7 @@ params:
       - { db: tms, source: dbo.DimensionMethods, destination: DimensionMethods }
       - { db: tms, source: dbo.DDLanguages, destination: DDLanguages }
       - { db: tms, source: dbo.Constituents, destination: Constituents }
+      - { db: tms, source: dbo.ConAltNames, destination: ConAltNames }
       - { db: tms, source: dbo.ConXrefs, destination: ConXrefs }
       - { db: tms, source: dbo.ConXrefDetails, destination: ConXrefDetails }
       - { db: tms, source: dbo.Roles, destination: Roles }
@@ -49,6 +50,7 @@ params:
       - { db: tms, source: dbo.Associations, destination: Associations }
       - { db: tms, source: dbo.Relationships, destination: Relationships }
       - { db: tms, source: dbo.AltNums, destination: AltNums }
+      - { db: tms, source: dbo.AltNumDescriptions, destination: AltNumDescriptions }
       - { db: tms, source: dbo.Locations, destination: Locations }
       - { db: tms, source: dbo.ObjLocations, destination: ObjLocations }
       - { db: tms, source: dbo.ObjComponents, destination: ObjComponents }
@@ -62,3 +64,11 @@ params:
       - { db: tms, source: dbo.Exhibitions, destination: Exhibitions }
       - { db: tms, source: dbo.ExhibitionTitles, destination: ExhibitionTitles }
       - { db: tms, source: dbo.ExhObjXrefs, destination: ExhObjXrefs }
+      - { db: tms, source: dbo.HistEvents, destination: HistEvents }
+      - { db: tms, source: dbo.VGSRPCONDITIONSS_RO, destination: VGSRPCONDITIONSS_RO }
+      - { db: tms, source: dbo.vgsrpSurveyTypesS_RO, destination: vgsrpSurveyTypesS_RO }
+      - { db: tms, source: dbo.vgsrpSurveyAttrTypesS_RO, destination: vgsrpSurveyAttrTypesS_RO }
+      - { db: tms, source: dbo.vgsrpCondLineItemsS_RO, destination: vgsrpCondLineItemsS_RO }
+      - { db: tms, source: dbo.VGSRPMEDIAMASTERS_RO, destination: VGSRPMEDIAMASTERS_RO }
+      - { db: tms, source: dbo.MediaPaths, destination: MediaPaths }
+      - { db: tms, source: dbo.OSCCitaatvormen, destination: OSCCitaatvormen }

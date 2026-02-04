@@ -297,6 +297,67 @@ schema:
         IsStaff:
           name: IsStaff
           type: text
+    ConAltNames:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        AltNameId:
+          name: AltNameId
+          type: text
+        ConstituentID:
+          name: ConstituentID
+          type: text
+        LastName:
+          name: LastName
+          type: text
+        FirstName:
+          name: FirstName
+          type: text
+        NameTitle:
+          name: NameTitle
+          type: text
+        Remarks:
+          name: Remarks
+          type: text
+        LoginID:
+          name: LoginID
+          type: text
+        EnteredDate:
+          name: EnteredDate
+          type: text
+        MiddleName:
+          name: MiddleName
+          type: text
+        Suffix:
+          name: Suffix
+          type: text
+        CultureGroup:
+          name: CultureGroup
+          type: text
+        Institution:
+          name: Institution
+          type: text
+        NameType:
+          name: NameType
+          type: text
+        DisplayName:
+          name: DisplayName
+          type: text
+        Position:
+          name: Position
+          type: text
+        salutation:
+          name: salutation
+          type: text
+        AlphaSort:
+          name: AlphaSort
+          type: text
     ConXrefs:
       primaryKey: tmsid
       columns:
@@ -1898,11 +1959,27 @@ schema:
         AltNumID:
           name: AltNumID
           type: text
-        Description:
-          name: Description
+        AltNumDescriptionID:
+          name: AltNumDescriptionID
           type: text
         ID:
           name: ID
+          type: text
+    AltNumDescriptions:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        AltNumDescriptionID:
+          name: AltNumDescriptionID
+          type: text
+        AltNumDescription:
+          name: AltNumDescription
           type: text
     Locations:
       primaryKey: tmsid
@@ -2030,6 +2107,158 @@ schema:
           type: text
         ObjectID:
           name: ObjectID
+          type: text
+    HistEvents:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        HistEventID:
+          name: HistEventID
+          type: text
+        EventName:
+          name: EventName
+          type: text
+    VGSRPCONDITIONSS_RO:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        ConditionID:
+          name: ConditionID
+          type: text
+        ID:
+          name: ID
+          type: text
+        Project:
+          name: Project
+          type: text
+        REPORTISODATE:
+           name: REPORTISODATE
+           type: text
+        SURVEYTYPEID:
+          name: SURVEYTYPEID
+          type: text
+    vgsrpSurveyTypesS_RO:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        SurveyType:
+          name: SurveyType
+          type: text
+        SurveyTypeID:
+          name: SurveyTypeID
+          type: text
+    vgsrpSurveyAttrTypesS_RO:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        AttributeType:
+          name: AttributeType
+          type: text
+        AttributeTypeID:
+          name: AttributeTypeID
+          type: text
+    vgsrpCondLineItemsS_RO:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        AttributeTypeID:
+          name: AttributeTypeID
+          type: text
+        BriefDescription:
+          name: BriefDescription
+          type: text
+        ConditionID:
+          name: ConditionID
+          type: text
+        CondLineItemID:
+          name: CondLineItemID
+          type: text
+        Proposal:
+          name: Proposal
+          type: text
+        Statement:
+          name: Statement
+          type: text
+    VGSRPMEDIAMASTERS_RO:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        MEDIAMASTERID:
+          name: MEDIAMASTERID
+          type: text
+        PRIMARYRENDID:
+          name: PRIMARYRENDID
+          type: text
+    MediaPaths:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        Path:
+          name: Path
+          type: text
+        PathID:
+          name: PathID
+          type: text
+    OSCCitaatvormen:
+      primaryKey: tmsid
+      columns:
+        tmsid:
+          name: tmsid
+          type: integer
+          attributes:
+            - { unsigned: true }
+            - { autoincrement: true }
+            - { length: 64 }
+        ConditionID:
+          name: ConditionID
+          type: text
+        TextEntry:
+          name: TextEntry
+          type: text
+        TextType:
+          name: TextType
           type: text
     CITvgsrpObjTombstoneD_RO:
       primaryKey: tmsid

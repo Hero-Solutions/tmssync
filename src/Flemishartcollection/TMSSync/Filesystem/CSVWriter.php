@@ -80,6 +80,13 @@ class CSVWriter {
      * @param array $row A single row of data to be inserted into the CSV file.
      */
     public function insertOne($row) {
-        $this->writer->insertOne($row);
+        // Fields that end in a backslash and are surrounded by double quotes,
+        // end in the double quotes not correctly interpreted and treated as if being escaped,
+        // resulting in subsequent fields being added to that field until the next non-escaped double quote is found.
+        // Adding a whitespace at the end of these fields solves this issue.
+        $modifiedRow = array_map(function($field) {
+            return (substr($field, -1) === '\\') ? $field . ' ' : $field;
+        }, $row);
+        $this->writer->insertOne($modifiedRow);
     }
 }
