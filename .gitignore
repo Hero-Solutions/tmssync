@@ -1,8 +1,14 @@
-vendor/
-app/config/config.yml
-app/config/schema.yml
-app/files/*
-composer.lock
-.idea/
-output.txt
 
+###> symfony/framework-bundle ###
+/.env.local
+/.env
+/.env.dev
+/.env.local.php
+/.env.*.local
+/.idea
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+/config/config.yml
+###< symfony/framework-bundle ###

@@ -1,32 +1,72 @@
 {
-    "name":"flemishartcollection/tmssync",
-    "description": "Export data from TMS to MySQL",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Matthias Vandermaesen",
-            "email": "matthias@colada.be"
-        }
-    ],
-    "minimum-stability": "dev",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "require": {
-        "symfony/console": "~2.5",
-        "symfony/dependency-injection": "~2.5",
-        "symfony/config": "~2.5",
-        "symfony/yaml": "^3.1",
-        "doctrine/dbal": "v2.5.4",
-        "monolog/monolog": "^1.21",
-        "league/csv": "^8.1",
-        "league/flysystem": "^1.0",
-        "leaseweb/doctrine-pdo-dblib": "^1.1",
-        "symfony/monolog-bridge": "^3.2"
+        "php": ">=8.2",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "doctrine/dbal": "*",
+        "league/csv": "*",
+        "symfony/console": "7.4.*",
+        "symfony/dotenv": "7.4.*",
+        "symfony/flex": "^2.10",
+        "symfony/framework-bundle": "7.4.*",
+        "symfony/monolog-bundle": "*",
+        "symfony/runtime": "7.4.*",
+        "symfony/yaml": "7.4.*"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
+        "bump-after-update": true,
+        "sort-packages": true
     },
     "autoload": {
         "psr-4": {
-            "Flemishartcollection\\TMSSync\\": "src/Flemishartcollection/TMSSync/",
-            "Flemishartcollection\\TMSSync\\Database\\": "src/Flemishartcollection/TMSSync/Database",
-            "Flemishartcollection\\TMSSync\\Configuration\\": "src/Flemishartcollection/TMSSync/Configuration",
-            "Flemishartcollection\\TMSSync\\Filesystem\\": "src/Flemishartcollection/TMSSync/Filesystem"
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*",
+        "symfony/polyfill-php74": "*",
+        "symfony/polyfill-php80": "*",
+        "symfony/polyfill-php81": "*",
+        "symfony/polyfill-php82": "*",
+        "symfony/polyfill-php83": "*",
+        "symfony/polyfill-php84": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "7.4.*"
         }
     }
 }
