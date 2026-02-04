@@ -2,12 +2,11 @@
 
 namespace App\Filesystem;
 
-use League\Csv\AbstractCsv;
 use League\Csv\Writer;
 
 final class CsvWriter
 {
-    private AbstractCsv $writer;
+    private Writer $writer;
 
     public function __construct(
         private readonly string $basePath
@@ -21,7 +20,7 @@ final class CsvWriter
             unlink($file);
         }
 
-        $this->writer = AbstractCsv::from($file, 'w');
+        $this->writer = Writer::from($file, 'w');
         $this->writer->setOutputBOM(Writer::BOM_UTF8);
     }
 

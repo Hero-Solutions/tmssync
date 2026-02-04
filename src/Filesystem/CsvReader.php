@@ -20,7 +20,7 @@ final class CsvReader
             throw new RuntimeException("CSV file not found: {$file}");
         }
 
-        $reader = Reader::createFromPath($file);
+        $reader = Reader::from($file);
         $reader->setHeaderOffset(0);
 
         return $reader;

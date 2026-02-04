@@ -8,7 +8,7 @@ parameters:
       charset: UTF8
     tms:
       host: localhost
-      driverClass: Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver
+      driver: pdo_sqlsrv
       dbname: tms
       user: root
       password: root

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e99b6de3fe770765a7a0baccb6dfa87c",
+    "content-hash": "0819a68556e126e19610850c696a23e9",
     "packages": [
         {
             "name": "doctrine/dbal",
@@ -3043,13 +3043,16 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "ext-pdo_sqlsrv": 10
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.2",
         "ext-ctype": "*",
-        "ext-iconv": "*"
+        "ext-iconv": "*",
+        "ext-pdo_sqlsrv": "*@beta"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"

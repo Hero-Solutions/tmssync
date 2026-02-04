@@ -11,4 +11,5 @@
 /var/
 /vendor/
 /config/config.yml
+/files
 ###< symfony/framework-bundle ###

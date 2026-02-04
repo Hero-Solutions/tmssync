@@ -29,7 +29,7 @@ final class ExportDataCommand extends Command
             ->addOption(
                 'fetch',
                 'fe',
-                InputOption::VALUE_NONE,
+                InputOption::VALUE_OPTIONAL,
                 'Fetch data from TMS source before dumping',
                 true
             )
@@ -37,7 +37,7 @@ final class ExportDataCommand extends Command
                 'exclusive',
                 'ex',
                 InputOption::VALUE_OPTIONAL,
-                'Comma separated list of destination tables',
+                'Only fetch data for these defined tables. Comma separated list.',
                 false
             );
     }
