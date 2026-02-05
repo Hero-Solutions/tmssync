@@ -23,20 +23,14 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-    App\Config\Mapping:
+    App\Command\InstallSchemaCommand:
         arguments:
-            $mapping: '%mapping%'
-    App\Database\ConnectionProvider:
+            $tables: '%tables%'
+            $sourceConfig: '%source%'
+            $destinationConfig: '%destination%'
+            $schemaFile: '%schema_file%'
+    App\Command\ExportDataCommand:
         arguments:
-            $connections:
-                mysql: '%mysql%'
-                tms: '%tms%'
-    App\Config\SchemaProvider:
-        arguments:
-            $schemaPath: '%kernel.project_dir%/config/schema.yml'
-    App\Filesystem\CsvReader:
-        arguments:
-            $basePath: '%csv_base_path%'
-    App\Filesystem\CsvWriter:
-        arguments:
-            $basePath: '%csv_base_path%'
+            $tables: '%tables%'
+            $sourceConfig: '%source%'
+            $destinationConfig: '%destination%'

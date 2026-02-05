@@ -1,74 +1,77 @@
 parameters:
-    mysql:
-      host: localhost
-      driver: pdo_mysql
-      dbname: tms
-      user: root
-      password: root
-      charset: UTF8
-    tms:
-      host: localhost
-      driver: pdo_sqlsrv
-      dbname: tms
-      user: root
-      password: root
-    mapping:
-      - { db: tms, source: dbo.Objects, destination: Objects }
-      - { db: tms, source: dbo.ObjContext, destination: ObjContext }
-      - { db: tms, source: dbo.ObjectNames, destination: ObjectNames }
-      - { db: tms, source: dbo.ClassificationXRefs, destination: ClassificationXRefs }
-      - { db: tms, source: dbo.Classifications, destination: Classifications }
-      - { db: tms, source: dbo.DimItemElemXrefs, destination: DimItemElemXrefs }
-      - { db: tms, source: dbo.Dimensions, destination: Dimensions }
-      - { db: tms, source: dbo.DimensionElements, destination: DimensionElements }
-      - { db: tms, source: dbo.DimElemTypeXrefs, destination: DimElemTypeXrefs }
-      - { db: tms, source: dbo.DimensionTypes, destination: DimensionTypes }
-      - { db: tms, source: dbo.DimUnitTypes, destination: DimUnitTypes }
-      - { db: tms, source: dbo.DimensionUnits, destination: DimensionUnits }
-      - { db: tms, source: dbo.DimensionMethods, destination: DimensionMethods }
-      - { db: tms, source: dbo.DDLanguages, destination: DDLanguages }
-      - { db: tms, source: dbo.Constituents, destination: Constituents }
-      - { db: tms, source: dbo.ConAltNames, destination: ConAltNames }
-      - { db: tms, source: dbo.ConXrefs, destination: ConXrefs }
-      - { db: tms, source: dbo.ConXrefDetails, destination: ConXrefDetails }
-      - { db: tms, source: dbo.Roles, destination: Roles }
-      - { db: tms, source: dbo.RoleTypes, destination: RoleTypes }
-      - { db: tms, source: dbo.TextTypes, destination: TextTypes }
-      - { db: tms, source: dbo.TextEntries, destination: TextEntries }
-      - { db: tms, source: dbo.TextStatuses, destination: TextStatuses }
-      - { db: tms, source: dbo.ThesXrefs, destination: ThesXrefs }
-      - { db: tms, source: dbo.ThesXrefTypes, destination: ThesXrefTypes }
-      - { db: tms, source: dbo.ThesaurusBases, destination: ThesaurusBases }
-      - { db: tms, source: dbo.TermClasses, destination: TermClasses }
-      - { db: tms, source: dbo.TermMaster, destination: TermMaster }
-      - { db: tms, source: dbo.Terms, destination: Terms }
-      - { db: tms, source: dbo.UserFieldXrefs, destination: UserFieldXrefs }
-      - { db: tms, source: dbo.ObjTitles, destination: ObjTitles }
-      - { db: tms, source: dbo.TitleTypes, destination: TitleTypes }
-      - { db: tms, source: dbo.CITvgsrpObjTombstoneD_RO, destination: CITvgsrpObjTombstoneD_RO }
-      - { db: tms, source: dbo.Departments, destination: Departments }
-      - { db: tms, source: dbo.Associations, destination: Associations }
-      - { db: tms, source: dbo.Relationships, destination: Relationships }
-      - { db: tms, source: dbo.AltNums, destination: AltNums }
-      - { db: tms, source: dbo.AltNumDescriptions, destination: AltNumDescriptions }
-      - { db: tms, source: dbo.Locations, destination: Locations }
-      - { db: tms, source: dbo.ObjLocations, destination: ObjLocations }
-      - { db: tms, source: dbo.ObjComponents, destination: ObjComponents }
-      - { db: tms, source: dbo.MediaXrefs, destination: MediaXrefs }
-      - { db: tms, source: dbo.MediaRenditions, destination: MediaRenditions }
-      - { db: tms, source: dbo.MediaFiles, destination: MediaFiles }
-      - { db: tms, source: dbo.ClassificationNotations, destination: ClassificationNotations }
-      - { db: tms, source: dbo.StatusFlags, destination: StatusFlags }
-      - { db: tms, source: dbo.AuthorityTranslations, destination: AuthorityTranslations }
-      - { db: tms, source: dbo.TermMasterThes, destination: TermMasterThes }
-      - { db: tms, source: dbo.Exhibitions, destination: Exhibitions }
-      - { db: tms, source: dbo.ExhibitionTitles, destination: ExhibitionTitles }
-      - { db: tms, source: dbo.ExhObjXrefs, destination: ExhObjXrefs }
-      - { db: tms, source: dbo.HistEvents, destination: HistEvents }
-      - { db: tms, source: dbo.VGSRPCONDITIONSS_RO, destination: VGSRPCONDITIONSS_RO }
-      - { db: tms, source: dbo.vgsrpSurveyTypesS_RO, destination: vgsrpSurveyTypesS_RO }
-      - { db: tms, source: dbo.vgsrpSurveyAttrTypesS_RO, destination: vgsrpSurveyAttrTypesS_RO }
-      - { db: tms, source: dbo.vgsrpCondLineItemsS_RO, destination: vgsrpCondLineItemsS_RO }
-      - { db: tms, source: dbo.VGSRPMEDIAMASTERS_RO, destination: VGSRPMEDIAMASTERS_RO }
-      - { db: tms, source: dbo.MediaPaths, destination: MediaPaths }
-      - { db: tms, source: dbo.OSCCitaatvormen, destination: OSCCitaatvormen }
+  schema_file: '%kernel.project_dir%/schema.sql'
+  source:
+    table_prefix: 'dbo.'
+    host: localhost
+    driver: pdo_sqlsrv
+    dbname: tms
+    user: root
+    password: root
+    charset: UTF8
+  destination:
+    host: localhost
+    driver: pdo_mysql
+    dbname: tms
+    user: root
+    password: root
+    charset: UTF8
+  tables:
+  - Objects
+  - ObjContext
+  - ObjectNames
+  - ClassificationXRefs
+  - Classifications
+  - DimItemElemXrefs
+  - Dimensions
+  - DimensionElements
+  - DimElemTypeXrefs
+  - DimensionTypes
+  - DimUnitTypes
+  - DimensionUnits
+  - DimensionMethods
+  - DDLanguages
+  - Constituents
+  - ConAltNames
+  - ConXrefs
+  - ConXrefDetails
+  - Roles
+  - RoleTypes
+  - TextTypes
+  - TextEntries
+  - TextStatuses
+  - ThesXrefs
+  - ThesXrefTypes
+  - ThesaurusBases
+  - TermClasses
+  - TermMaster
+  - Terms
+  - UserFieldXrefs
+  - ObjTitles
+  - TitleTypes
+  - CITvgsrpObjTombstoneD_RO
+  - Departments
+  - Associations
+  - Relationships
+  - AltNums
+  - AltNumDescriptions
+  - Locations
+  - ObjLocations
+  - ObjComponents
+  - MediaXrefs
+  - MediaRenditions
+  - MediaFiles
+  - ClassificationNotations
+  - StatusFlags
+  - AuthorityTranslations
+  - TermMasterThes
+  - Exhibitions
+  - ExhibitionTitles
+  - ExhObjXrefs
+  - HistEvents
+  - VGSRPCONDITIONSS_RO
+  - vgsrpSurveyTypesS_RO
+  - vgsrpSurveyAttrTypesS_RO
+  - vgsrpCondLineItemsS_RO
+  - VGSRPMEDIAMASTERS_RO
+  - MediaPaths
+  - OSCCitaatvormen
