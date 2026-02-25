@@ -2,18 +2,18 @@ parameters:
   schema_file: '%kernel.project_dir%/schema.sql'
   source:
     table_prefix: 'dbo.'
-    host: localhost
+    host: '%env(SOURCE_HOST)%'
     driver: pdo_sqlsrv
-    dbname: tms
-    user: root
-    password: root
+    dbname: '%env(SOURCE_DB)%'
+    user: '%env(SOURCE_USER)%'
+    password: '%env(SOURCE_PASSWORD)%'
     charset: UTF8
   destination:
-    host: localhost
+    host: '%env(DEST_HOST)%'
     driver: pdo_mysql
-    dbname: tms
-    user: root
-    password: root
+    dbname: '%env(DEST_DB)%'
+    user: '%env(DEST_USER)%'
+    password: '%env(DEST_PASSWORD)%'
     charset: UTF8
   tables:
     - Objects

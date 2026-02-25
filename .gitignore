@@ -10,6 +10,5 @@
 /public/bundles/
 /var/
 /vendor/
-/config/tmssync.yml
 /files
 ###< symfony/framework-bundle ###
