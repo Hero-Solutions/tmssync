@@ -9,6 +9,7 @@ use RuntimeException;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(
@@ -27,6 +28,16 @@ final class InstallSchemaCommand extends Command
         parent::__construct();
     }
 
+    protected function configure(): void
+    {
+        $this->addOption(
+            'if-changed',
+            null,
+            InputOption::VALUE_NONE,
+            'Only rebuild if table list differs'
+        );
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!is_file($this->schemaFile)) {
@@ -39,6 +50,13 @@ final class InstallSchemaCommand extends Command
         $srcConn = DriverManager::getConnection($this->sourceConfig);
         $destConn = DriverManager::getConnection($this->destinationConfig);
 
+        $ifChanged = $input->getOption('if-changed');
+
+        if ($ifChanged && !$this->tablesDiffer($destConn)) {
+            $this->logger->info("*** No table changes detected. Skipping rebuild.");
+            return Command::SUCCESS;
+        }
+
         $this->logger->info("*** Wiping database (tables, views, stored procedures, functions, events and triggers)");
         $this->wipeDatabase($destConn);
         $this->logger->info("*** Recreating all tables");
@@ -48,6 +66,22 @@ final class InstallSchemaCommand extends Command
         $this->logger->info("*** DONE recreating MySQL database");
 
         return Command::SUCCESS;
+    }
+
+    private function tablesDiffer(Connection $destConn): bool
+    {
+        $existingTables = $destConn->fetchFirstColumn('SHOW TABLES');
+
+        if (empty($existingTables)) {
+            return false;
+        }
+
+        $expectedTables = $this->tables;
+
+        sort($existingTables);
+        sort($expectedTables);
+
+        return $existingTables !== $expectedTables;
     }
 
     private function wipeDatabase(Connection $conn): void
