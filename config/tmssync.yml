@@ -8,7 +8,9 @@ parameters:
     user: '%env(SOURCE_USER)%'
     password: '%env(SOURCE_PASSWORD)%'
     charset: UTF8
-    TrustServerCertificate: true
+    driverOptions:
+      Encrypt: true
+      TrustServerCertificate: true
   destination:
     host: '%env(DEST_HOST)%'
     driver: pdo_mysql
