@@ -173,7 +173,8 @@ final class InstallSchemaCommand extends Command
             // Execute Drop & Recreate
             $destConn->executeStatement("DROP TABLE IF EXISTS `{$tableName}`");
             $createQuery = sprintf(
-                "CREATE TABLE `{$tableName}` (%s)",
+                "CREATE TABLE `%s` (%s) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci",
+                $tableName,
                 implode(', ', $definitions)
             );
             $destConn->executeStatement($createQuery);

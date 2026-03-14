@@ -7,7 +7,7 @@ parameters:
     dbname: '%env(SOURCE_DB)%'
     user: '%env(SOURCE_USER)%'
     password: '%env(SOURCE_PASSWORD)%'
-    charset: UTF8
+    charset: utf8mb4
     driverOptions:
       Encrypt: true
       TrustServerCertificate: true
@@ -17,7 +17,7 @@ parameters:
     dbname: '%env(DEST_DB)%'
     user: '%env(DEST_USER)%'
     password: '%env(DEST_PASSWORD)%'
-    charset: UTF8
+    charset: utf8mb4
   tables:
     - Objects
     - ObjContext
