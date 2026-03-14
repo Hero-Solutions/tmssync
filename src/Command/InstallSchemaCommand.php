@@ -73,7 +73,7 @@ final class InstallSchemaCommand extends Command
         $existingTables = $destConn->fetchFirstColumn('SHOW TABLES');
 
         if (empty($existingTables)) {
-            return false;
+            return true;
         }
 
         $expectedTables = $this->tables;
