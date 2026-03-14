@@ -74,6 +74,9 @@ final class ExportDataCommand extends Command
             $this->logger->info("Finished {$tableName}: Total {$count} rows.");
         }
 
+        $srcConn->close();
+        $destConn->close();
+
         return Command::SUCCESS;
     }
 
