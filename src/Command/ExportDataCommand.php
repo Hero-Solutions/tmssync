@@ -31,6 +31,17 @@ final class ExportDataCommand extends Command
         $srcConn = DriverManager::getConnection($this->sourceConfig);
         $destConn = DriverManager::getConnection($this->destinationConfig);
 
+        $this->logger->info('Wiping all destination tables.');
+        $destConn->executeStatement('SET FOREIGN_KEY_CHECKS=0');
+
+        foreach ($this->tables as $tableName) {
+            $this->logger->info("Truncating {$tableName}");
+            $destConn->executeStatement(sprintf('TRUNCATE TABLE `%s`', $tableName));
+        }
+
+        $destConn->executeStatement('SET FOREIGN_KEY_CHECKS=1');
+        $this->logger->info('All tables wiped. Starting data migration.');
+
         foreach ($this->tables as $tableName) {
             if(!empty($this->sourceConfig['table_prefix'])) {
                 $sourceTable = "{$this->sourceConfig['table_prefix']}{$tableName}";
